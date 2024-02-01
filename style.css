@@ -1,0 +1,172 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root{
+    --text-color: white;
+    --bg-url:  url(./assets/bg-mobile.jpg);
+    --stroke-color: rgba(255, 255, 255, 0.5);
+    --surface-color: rgba(255, 255, 255, 0.1);
+    --surface-color-hover:rgba(255, 255, 255, 0.5);
+    --highlight-color: rgba(255, 255, 255, 0.2);
+    --swich-bg-url: url(assets/moon-stars.svg);
+}
+
+.light{
+    --text-color: black;
+    --bg-url:  url(./assets/bg-mobile-light.jpg);
+    --stroke-color: rgba(0, 0, 0, 0.5);
+    --surface-color: rgba(0,0,0,0.05);
+    --surface-color-hover:rgba(0, 0, 0, 0.02);
+    --highlight-color: rgba(0, 0, 0, 0.1);
+    --swich-bg-url: url(assets/sun.svg);
+}
+
+body {
+    /*
+    background-image: url(./assets/bg-mobile.jpg); 
+    background-repeat: no-repeat; (repetição de imagens)
+    background-position: top center; (posição da imagens pontos x e y)
+    background-size: cover; (cover irá cobri todo os espaço visivel)*/
+    /*background: color umage repeat position/size (unica propriedade - atalho)*/
+    background: var(--bg-url)no-repeat top center/cover;   
+}
+
+body * {
+    font-family: 'Inter', sans-serif;
+    color: var(--text-color) ; /*ou #ffffff*/
+}
+
+#container {
+    width: 360px;
+    padding: 0 24px;
+    margin: 56px auto 0px;
+    /*(margin-top: 56px;margin-right: auto;margin-bottom: auto; margin-left: auto; ou padding-top: 56px;)*/
+}
+
+/*profile*/
+#profile {
+    text-align: center;
+    padding: 24px;
+}
+
+#profile img {
+    width:112px;
+}
+
+#profile p {
+    font-weight: 500;
+    line-height: 24px;
+    margin-top: 8px;
+}
+
+/*switch*/
+#switch {
+    position: relative;
+    width: 64px;
+    margin: 4px auto;
+}
+
+#switch button {
+    width: 32px;
+    height: 32px;
+    background: white var(--swich-bg-url) no-repeat center;
+    border: 0;
+    border-radius: 50%;
+    position: absolute;
+    /*position: absolute libera varias propriedades com a do  z-index você muda os andares, com as demias camadas, possibilita de navegar pela sua página (top:0; bottom: 0; right: 0; left: 0;)*/
+    left: 0;
+    z-index: 1;
+    top: 50%;
+    transform: translateY(-50%); 
+}
+
+.light #switch button{
+    right: 0;
+    left: initial;
+}
+
+#switch span {
+    display: block;
+    /*pois span é em inline e muitas vezes acaba não aceitando altura*/
+    width: 64px;
+    height: 24px;
+    /*surface-color-dark-mode*/
+    background: var(--surface-color);
+    /*stroke-color-dark-mode*/
+    border: 1px solid var(--stroke-color);
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+    border-radius: 9999px;
+  
+}
+
+/*Links */
+ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  padding: 24px 0;
+ /* flex-direction: row; (padrão)
+ flex-direction: column; - (display: flex - gap: 8px;)*/
+ 
+}
+
+ul li a {
+    /*border: 1px solid rgb(35, 99, 158);
+    /*display: block
+    text-align:center - também fuciona*/
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+    padding: 16px 24px; 
+
+    background: var(--surface-color);
+    /*rgba(red, green, blue, alpha);*/
+    border: 1px solid var(--stroke-color);
+    border-radius: 8px;
+
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+
+    text-decoration: none;
+    font-weight: 500;
+
+    transition: background 0.2s;
+}
+
+/*pseudo-selector - hover*/
+ul li a:hover {
+    background:var(--surface-color-hover);
+    border: 1.5px solid var(--text-color);
+}
+
+/*social links*/
+#social-links {
+    display: flex;
+    justify-content: center;
+    padding:  32px 0;
+    font-size: 24px;
+}
+
+#social-links a { 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 16px ;
+    border-radius: 50%;
+    transition: background 0.2s;
+}
+
+#social-links a:hover {
+    background:  var(--highlight-color);
+}
+
+footer { 
+    padding: 24px 0;
+    text-align: center; 
+}
