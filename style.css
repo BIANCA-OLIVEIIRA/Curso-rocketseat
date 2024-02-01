@@ -31,8 +31,8 @@ body {
     background-position: top center; (posição da imagens pontos x e y)
     background-size: cover; (cover irá cobri todo os espaço visivel)*/
     /*background: color umage repeat position/size (unica propriedade - atalho)*/
-    background: var(--bg-url)no-repeat top center/cover;   
-    height: 100vh;
+    background: var(--bg-url) no-repeat top center/cover;   
+     height: 100vh; 
 }
 
 body * {
@@ -41,11 +41,11 @@ body * {
 }
 
 #container {
-    width: 100%;
-    max-width: 588px;
-    margin: 56px auto 0px;
+     width: 100%;
+     max-width: 588px;
+     margin: 56px auto 0px;
+     padding-top: 56px;
     /*(margin-top: 56px;margin-right: auto;margin-bottom: auto; margin-left: auto; ou padding-top: 56px;)*/
-    padding: 24px 0;
 }
 
 /*profile*/
@@ -55,7 +55,7 @@ body * {
 }
 
 #profile img {
-    width:112px;
+    width: 112px;
 }
 
 #profile p {
@@ -92,9 +92,9 @@ body * {
     left: initial; */
 }
 
-#switch button:hover{
+ #switch button:hover{
     outline: 8px solid var(--highlight-color);
-}
+} 
 
 #switch span {
     display: block;
@@ -148,7 +148,7 @@ ul li a {
 
 /*pseudo-selector - hover*/
 ul li a:hover {
-    background:var(--surface-color-hover);
+    background: var(--surface-color-hover);
     border: 1.5px solid var(--text-color);
 }
 
